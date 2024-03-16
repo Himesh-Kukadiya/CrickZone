@@ -25,5 +25,11 @@ router
     .route('/imagelist')
     .get(boxController.imageList)
 
+// OfferLists
+const offersController = require('../Controller/offerController');
+router
+    .route('/offerList')
+    .get(offersController.offersList)
+
 // exprot final router
 module.exports = router;

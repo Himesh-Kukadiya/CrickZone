@@ -1,5 +1,5 @@
 // import React from 'react'
-import bgImage from '../../assets/images/homeBody2.jpg';
+import bgImage from '../../assets/images/homeBody.jpg';
 import Modal from './Modal';
 
 const MainSection = () => {

@@ -1,6 +1,6 @@
 // import React from 'react'
 import SignupPageCss from '../Css/LoginPage.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
@@ -41,11 +41,12 @@ const SignupPage = () => {
         }
         else {
             axios
-            .post("http://127.0.0.1:2020/signup", signupData)
+            .post("http://127.0.0.1:2020/usersignup", signupData)
             .then((response) => {
                 console.warn(response.data);
                 seterrors("signup successful");
                 seterrorStatus(false)
+                localStorage.setItem("userData", JSON.stringify(response.data.userData))
                 setTimeout(() => {
                     navigate('/home');
                 }, 500);
@@ -57,6 +58,13 @@ const SignupPage = () => {
         }
     }
 
+    useEffect( () => {
+        if(localStorage.getItem("userData") != null) {
+            setTimeout(() => {
+                navigate('/home');
+            }, 100);
+        }
+    }, [])
     return (
         <>
             <div className={SignupPageCss.LoginBody}>
@@ -67,7 +75,7 @@ const SignupPage = () => {
                     <form onSubmit={signupRequest}>
                         {/* Name */}
                         <div className={SignupPageCss.form_wrapper}>
-                            <input id="input" name="name" type="text" onChange={handleInputs} required />
+                            <input  name="name" type="text" onChange={handleInputs} required />
                                 <label htmlFor="input">Name</label>
                                 <i className="material-icons">person</i>
                         </div>
@@ -75,26 +83,26 @@ const SignupPage = () => {
                         <div className={SignupPageCss.remember}>
                         {/* City */}
                             <div className={SignupPageCss.form_wrapper}>
-                                <input id="input" name="city" type="text" onChange={handleInputs} required />
+                                <input  name="city" type="text" onChange={handleInputs} required />
                                     <label htmlFor="input">City</label>
                                     <i className="material-icons">place</i>
                             </div>
                         {/* Area */}
                             <div className={SignupPageCss.form_wrapper}>
-                                <input id="input" name="area" type="text" onChange={handleInputs} required />
+                                <input  name="area" type="text" onChange={handleInputs} required />
                                     <label htmlFor="input">Area</label>
                                     <i className="material-icons">person_pin</i>
                             </div>
                         </div>
                         {/* Mobile */}
                         <div className={SignupPageCss.form_wrapper}>
-                            <input id="input" name="mobile" type="text" onChange={handleInputs} required />
+                            <input  name="mobile" type="text" onChange={handleInputs} required />
                                 <label htmlFor="input">Mobile</label>
                                 <i className="material-icons">phone</i>
                         </div>
                         {/* Email */}
                         <div className={SignupPageCss.form_wrapper}>
-                            <input id="input" name="email" type="text" onChange={handleInputs} required />
+                            <input  name="email" type="text" onChange={handleInputs} required />
                                 <label htmlFor="input">Email</label>
                                 <i className="material-icons">email</i>
                         </div>                    

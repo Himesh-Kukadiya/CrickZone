@@ -25,12 +25,13 @@ const LoginPage = () => {
     const loginRequest = (e) => {
         e.preventDefault();
         axios
-        .post("http://127.0.0.1:2020/login", loginData)
+        .post("http://127.0.0.1:2020/userlogin", loginData)
         .then((response) => {
             console.warn(response.data);
             seterrors("Login successful");
             seterrorStatus(false)
-            localStorage.setItem("UserData", JSON.stringify(response.data.data))
+            console.log(response.data.useData)
+            localStorage.setItem("userData", JSON.stringify(response.data.userData))
             setTimeout(() => {
                 navigate('/home');
             }, 500);
@@ -41,6 +42,12 @@ const LoginPage = () => {
         });
     }
 
+    // check use loged in or not...
+    if(localStorage.getItem("userData") != null) {
+        setTimeout(() => {
+            navigate('/home');
+        }, 100);
+    }
     return (
         <div className={LoginPageCss.LoginBody}>
             <main className='Login'>

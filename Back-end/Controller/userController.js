@@ -32,9 +32,15 @@ const signup = async (req, res) => {
             UImageURL: "default"
         };
 
-        await userModal.create(newUser);
-
-        res.status(200).json({ isSignedIn: true, message: 'User created successfully' });
+        const data = await userModal.create(newUser);
+        const userData = {
+            "_id" : data._id,
+            "name" : data.UName,
+            "city" : data.UCity,
+            "area" : data.UArea,
+            "email" : data.UEmail
+        }
+        res.status(200).json({ isSignedIn: true, message: 'User created successfully',  userData});
     } catch (error) {
         console.error(error);
         res.status(500).json({ isSignedIn: false, message: 'Signup failed', error: error.message });
@@ -56,8 +62,16 @@ const login = async(req, res) => {
             return res.status(401).json({ isLoggedIn: false, message: 'Invalid credentials' });
         }
 
+        const userData= {
+            "_id" : user._id, 
+            "Name": user.UName,
+            "City": user.UCity, 
+            "Area": user.UArea, 
+            "Email": user.UEmail
+        } 
+        console.log(userData)
         // Assuming the login is successful, and you're not using tokens for this example
-        res.status(200).json({ isLoggedIn: true, message: 'Login successful', data: {"Id": user._id, "Name": user.UName, "City": user.UCity, "Area": user.UArea, "Email": user.UEmail} });
+        res.status(200).json({ isLoggedIn: true, message: 'Login successful', userData});
     } catch (error) {
         console.error(error);
         res.status(500).send({ message: 'Server error' });
