@@ -1,9 +1,8 @@
 // import React from 'react';
-import aboutImage from '../../assets/images/homeBody3.jpg';
 
 const AboutSection = () => {
     return (
-        <> 
+        <>
             <section className="ftco-section" id="section-about">
                 <div className="container">
                     <div className="row">
@@ -17,7 +16,7 @@ const AboutSection = () => {
                         </div>
                         <div className="col-md-1"></div>
                         <div className="col-md-6 ftco-animate img" data-animate-effect="fadeInRight">
-                            <img src={aboutImage} alt="Free Template by Free-Template.co" />
+                            <img src={"src/assets/images/login.jpg"} style={{}} alt="Free Template by Free-Template.co" />
                         </div>
                     </div>
                 </div>

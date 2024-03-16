@@ -1,11 +1,10 @@
 // import React from 'react'
-import bgImage from '../../assets/images/homeBody.jpg';
 import Modal from './Modal';
 
 const MainSection = () => {
     return (
         <>
-            <section className="ftco-cover" style={{ backgroundImage: `url(${bgImage})` }} id="section-home">
+            <section className="ftco-cover" style={{ backgroundImage: `url(${"src/assets/images/homeBody2.jpg"})` }} id="section-home">
                 <div className="container">
                     <div className="row align-items-center justify-content-center text-center ftco-vh-100">
                         <div className="col-md-12">

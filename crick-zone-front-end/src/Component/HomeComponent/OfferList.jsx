@@ -32,37 +32,25 @@ const OfferList = () => {
                         
                         <div className="col-md-12">
                             <div className="owl-carousel ftco-owl">
-                                { //offerList.map((data, index) => (
-                                    // <React.Fragment key={index}>
-                                    //     <div className="item">
-                                    //         <div className="media d-block mb-4 text-center ftco-media border-0"> {/* ftco-animate */}
-                                    //             <img src={"src/assets/images/Boxes/"+data.Bid.BImageURL} alt="Free Template by Free-Template.co" className="img-fluid" />
-                                    //                 <div className="media-body p-md-5 p-4">
-                                    //                     <h5 className="text-primary"> Off Right Now</h5>
-                                    //                     <h5 className="mt-0 h4">Beef with Sauce</h5>
-                                    //                     <p className="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    //                     <p className="mb-0"><a href="#" className="btn btn-primary btn-sm">Order Now!</a></p>
-                                    //                 </div>
-                                    //         </div>
-                                    //     </div>
-                                    // </React.Fragment>
-                                // ))
-                                }
                                 
-                                <div className="item">
-                                            <div className="media d-block mb-4 text-center ftco-media border-0"> {/* ftco-animate */}
-                                                <img src={"src/assets/images/Boxes/box-3.jpg"} alt="Free Template by Free-Template.co" className="img-fluid" />
-                                                    <div className="media-body p-md-5 p-4">
-                                                        <h5 className="text-primary"> Off Right Now</h5>
-                                                        <h5 className="mt-0 h4">Beef with Sauce</h5>
-                                                        <p className="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                                        <p className="mb-0"><a href="#" className="btn btn-primary btn-sm">Order Now!</a></p>
-                                                    </div>
+                                {offerList.map((data, index) => (
+                                        <React.Fragment key={index}>
+                                            <div className="item">
+                                                <div className="media d-block mb-4 text-center ftco-media border-0"> {/* ftco-animate */}
+                                                    <img src={"src/assets/images/Boxes/"+data.Bid.BImageURL} alt="Free Template by Free-Template.co" className="img-fluid" />
+                                                        <div className="media-body p-md-5 p-4">
+                                                            <h5 className="text-primary"> {data.Off}% Off Right Now </h5>
+                                                            <h5 className="mt-0 h4">{data.Bid.BName}</h5>
+                                                            <p className="mb-4">{data.Bid.BDescription}</p>
+                                                            <p className="mb-0"><a href="#" className="btn btn-primary btn-sm">Book Now!</a></p>
+                                                        </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </React.Fragment>
+                                    ))}
 
-                                        <div className="item">
-                                            <div className="media d-block mb-4 text-center ftco-media border-0"> {/* ftco-animate */}
+                                        {/* <div className="item">
+                                            <div className="media d-block mb-4 text-center ftco-media ftco-animate border-0">
                                                 <img src={"src/assets/images/Boxes/box-3.jpg"} alt="Free Template by Free-Template.co" className="img-fluid" />
                                                     <div className="media-body p-md-5 p-4">
                                                         <h5 className="text-primary"> Off Right Now</h5>
@@ -71,22 +59,8 @@ const OfferList = () => {
                                                         <p className="mb-0"><a href="#" className="btn btn-primary btn-sm">Order Now!</a></p>
                                                     </div>
                                             </div>
-                                        </div>
-
-                                        <div className="item">
-                                            <div className="media d-block mb-4 text-center ftco-media border-0"> {/* ftco-animate */}
-                                                <img src={"src/assets/images/Boxes/box-3.jpg"} alt="Free Template by Free-Template.co" className="img-fluid" />
-                                                    <div className="media-body p-md-5 p-4">
-                                                        <h5 className="text-primary"> Off Right Now</h5>
-                                                        <h5 className="mt-0 h4">Beef with Sauce</h5>
-                                                        <p className="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                                        <p className="mb-0"><a href="#" className="btn btn-primary btn-sm">Order Now!</a></p>
-                                                    </div>
-                                            </div>
-                                        </div>
+                                        </div> */}
                             </div>
-
-                            
                         </div>
                     </div>
                 </div>
