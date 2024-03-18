@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 const OfferList = () => {
+    // var navigate = useNavigate(); // for Navigation
     const [offerList, setOfferList] = useState([]); // Offer list Data
 
     useEffect(() => {
@@ -15,13 +17,15 @@ const OfferList = () => {
             });
     }, []);
 
+    // fucntions
+
     return (
         <>
             <section className="ftco-section bg-light" id="section-offer">
-                <div className="container">
+                <div className="container" style={{marginTop: -50}}>
                     <div className="row">
                         <div className="col-md-12 text-center mb-5 ftco-animate">
-                            <h4 className="ftco-sub-title">Our Offers</h4>
+                            <h4 className="ftco-sub-title text-dark">Our Box</h4>
                             <h2 className="display-4">Offers &amp; Promos</h2>
                             <div className="row justify-content-center">
                                 <div className="col-md-7">
@@ -34,14 +38,14 @@ const OfferList = () => {
                             <div className="owl-carousel ftco-owl" style={{ display: 'flex', gap: 10, flexDirection: 'row', flexWrap: 'nowrap', marginLeft: '-10px', marginRight: '-10px', overflowX: 'auto' }}>
                                 {offerList.map((data, index) => (
                                     <React.Fragment key={index}>
-                                        <div className="item" style={{ minWidth: 400, marginLeft: '10px', marginRight: '10px' }}>
+                                        <div className="item" style={{ minWidth: 300, marginLeft: '10px', marginRight: '10px' }}>
                                             <div className="media d-block mb-4 text-center ftco-media border-0">
                                                 <img src={"src/assets/images/Boxes/" + data.Bid.BImageURL} alt="Free Template by Free-Template.co" className="img-fluid" />
                                                 <div className="media-body p-md-5 p-4">
                                                     <h5 className="text-primary"> {data.Off}% Off Right Now </h5>
                                                     <h5 className="mt-0 h4">{data.Bid.BName}</h5>
                                                     <p className="mb-4">{data.Bid.BDescription}</p>
-                                                    <p className="mb-0"><a href="#" className="btn btn-primary btn-sm">Book Now!</a></p>
+                                                    <p className="mb-0"><Link className="btn btn-primary btn-sm" to={"/booking?id="+data._id} > Book Now! </Link></p>
                                                 </div>
                                             </div>
                                         </div>

@@ -22,8 +22,10 @@ router
 // Box List
 const boxController = require('../Controller/boxController')
 router
-    .route('/imagelist')
-    .get(boxController.imageList)
+    .route('/boxBookingDetails')
+    .post(boxController.getBookingDetails);
+
+module.exports = router;
 
 // OfferLists
 const offersController = require('../Controller/offerController');

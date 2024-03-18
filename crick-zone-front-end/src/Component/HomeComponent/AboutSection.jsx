@@ -16,7 +16,7 @@ const AboutSection = () => {
                         </div>
                         <div className="col-md-1"></div>
                         <div className="col-md-6 ftco-animate img" data-animate-effect="fadeInRight">
-                            <img src={"src/assets/images/login.jpg"} style={{}} alt="Free Template by Free-Template.co" />
+                            <img src={"src/assets/images/login.jpg"}  alt="Free Template by Free-Template.co" />
                         </div>
                     </div>
                 </div>

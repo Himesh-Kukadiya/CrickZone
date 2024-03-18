@@ -2,9 +2,9 @@
 
 import Footer from '../Component/Footer';
 import AboutSection from '../Component/HomeComponent/AboutSection';
-import BoxList from '../Component/HomeComponent/OfferList';
 import MainSection from '../Component/HomeComponent/MainSection';
 import { NavBar } from '../Component/HomeComponent/NavBar';
+import OfferList from '../Component/HomeComponent/OfferList';
 
 
 const HomePage = () => {
@@ -13,7 +13,7 @@ const HomePage = () => {
             <NavBar />
             <MainSection />
             <AboutSection />
-            <BoxList />
+            <OfferList />
 
             <Footer />
         </>

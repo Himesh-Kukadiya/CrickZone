@@ -51,6 +51,7 @@ main form {
 }
 
 main input[type="text"],
+input[type="password"], 
 input[type="password"] {
     padding: 7px;
     border: 2px solid white;
