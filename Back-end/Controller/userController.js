@@ -33,13 +33,14 @@ const signup = async (req, res) => {
         };
 
         const data = await userModal.create(newUser);
-        const userData = {
-            "_id" : data._id,
-            "name" : data.UName,
-            "city" : data.UCity,
-            "area" : data.UArea,
-            "email" : data.UEmail
-        }
+        const userData= {
+            "_id" : user._id, 
+            "Name": user.UName,
+            "City": user.UCity, 
+            "Area": user.UArea, 
+            "Mobile" : user.UMobile,
+            "Email": user.UEmail
+        } 
         res.status(200).json({ isSignedIn: true, message: 'User created successfully',  userData});
     } catch (error) {
         console.error(error);
@@ -67,10 +68,9 @@ const login = async(req, res) => {
             "Name": user.UName,
             "City": user.UCity, 
             "Area": user.UArea, 
+            "Mobile" : user.UMobile,
             "Email": user.UEmail
         } 
-        console.log(userData)
-        // Assuming the login is successful, and you're not using tokens for this example
         res.status(200).json({ isLoggedIn: true, message: 'Login successful', userData});
     } catch (error) {
         console.error(error);
@@ -81,7 +81,6 @@ const login = async(req, res) => {
 const hashconverter = async (req, res) => {
     const { password } = req.body;
     const hashPassword = await bcrypt.hash(password, 10);
-    console.log(hashPassword);
     res.send(hashPassword);
 }
 module.exports = {login, signup, hashconverter}

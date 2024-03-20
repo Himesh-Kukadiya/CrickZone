@@ -22,6 +22,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/home" element={ <h1> main Home Page</h1> } />
           <Route path="/booking" element={ <BookingDetails /> } />
+          {/* <Route path="http://localhost:2020/paymentVarification" element={ <BookingDetails /> } /> */}
         </Routes>
       </BrowserRouter>
     </>

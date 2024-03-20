@@ -22,16 +22,26 @@ router
 // Box List
 const boxController = require('../Controller/boxController')
 router
-    .route('/boxBookingDetails')
+    .route('/boxBookingDetails') 
     .post(boxController.getBookingDetails);
 
-module.exports = router;
+router
+    .route('/bookNow')
+    .post(boxController.bookNow)
 
+router
+    .route('/paymentVarification')
+    .post(boxController.paymentVarification)
+
+router
+    .route('/getKey')
+    .get((req,res) => {res.status(200).json({key: "rzp_test_cX0VB9927mioP6"})})
 // OfferLists
 const offersController = require('../Controller/offerController');
 router
     .route('/offerList')
     .get(offersController.offersList)
+
 
 // exprot final router
 module.exports = router;
