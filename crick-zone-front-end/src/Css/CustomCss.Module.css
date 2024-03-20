@@ -1,0 +1,17 @@
+.text_blue {
+    color: rgb(15, 15, 248);
+}
+
+.text_disabled {
+    color: rgb(155, 155, 159);
+}
+
+.button_primary {
+    background-color: #0b0bdded;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

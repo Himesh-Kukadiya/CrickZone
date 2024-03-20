@@ -5,7 +5,6 @@ const offersList = async (req, res) => {
     const offersDetail = await offersModal.find()
                                             .populate("Bid")
                                             .exec();
-    console.log(offersDetail)
     res.status(200).send(offersDetail);
 };
 
