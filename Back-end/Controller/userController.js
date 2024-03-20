@@ -39,11 +39,11 @@ const signup = async (req, res) => {
             "City": user.UCity, 
             "Area": user.UArea, 
             "Mobile" : user.UMobile,
-            "Email": user.UEmail
+            "Email": user.UEmail,
+            "Image": user.UImageURL
         } 
         res.status(200).json({ isSignedIn: true, message: 'User created successfully',  userData});
     } catch (error) {
-        console.error(error);
         res.status(500).json({ isSignedIn: false, message: 'Signup failed', error: error.message });
     }
 }
@@ -69,18 +69,32 @@ const login = async(req, res) => {
             "City": user.UCity, 
             "Area": user.UArea, 
             "Mobile" : user.UMobile,
-            "Email": user.UEmail
+            "Email": user.UEmail,
+            "Image": user.UImageURL
         } 
         res.status(200).json({ isLoggedIn: true, message: 'Login successful', userData});
     } catch (error) {
-        console.error(error);
         res.status(500).send({ message: 'Server error' });
     }
 }
 
+const profile = async(req, res) => {
+    const { id } = req.body;
+    try {
+        const user = await userModal.findOne({id});
+        if(!user) {
+            return res.status(500).send({error: "user not found"})
+        }
+        res.status(200).json(user)
+    }
+    catch (error) {
+        res.status(500).send({ message: 'Server error' });
+    }
+
+}
 const hashconverter = async (req, res) => {
     const { password } = req.body;
     const hashPassword = await bcrypt.hash(password, 10);
     res.send(hashPassword);
 }
-module.exports = {login, signup, hashconverter}
+module.exports = {login, signup, hashconverter, profile}

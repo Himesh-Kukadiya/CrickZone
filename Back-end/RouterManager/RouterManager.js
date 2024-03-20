@@ -7,11 +7,14 @@ const userController = require('../Controller/userController')
 router 
     .route('/userlogin')
     .post(userController.login)
-
 // signup
 router 
     .route('/usersignup')
     .post(userController.signup)
+// profile
+router 
+    .route('/userprofile')
+    .post(userController.profile)
 
 // hash password
 router

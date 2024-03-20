@@ -14,7 +14,7 @@ const HomePage = () => {
             <MainSection />
             <AboutSection />
             <OfferList />
-
+            
             <Footer />
         </>
     )

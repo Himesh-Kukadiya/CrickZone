@@ -1,5 +1,6 @@
 
 // import { NavBar } from './Component/HomeComponent/NavBar'
+import Logout from './Component/Logout'
 import BookingDetails from './Pages/Booking/BookingDetails'
 import HomePage from './Pages/HomePage'
 import LoginPage from './Pages/LoginPage'
@@ -19,10 +20,11 @@ function App() {
             <HomePage />
           </>} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/home" element={ <h1> main Home Page</h1> } />
           <Route path="/booking" element={ <BookingDetails /> } />
-          {/* <Route path="http://localhost:2020/paymentVarification" element={ <BookingDetails /> } /> */}
+          <Route path="/booking" element={ <BookingDetails /> } />
         </Routes>
       </BrowserRouter>
     </>

@@ -33,7 +33,7 @@ const LoginPage = () => {
             console.log(response.data.useData)
             localStorage.setItem("userData", JSON.stringify(response.data.userData))
             setTimeout(() => {
-                navigate('/home');
+                navigate('/');
             }, 500);
         })
         .catch((error) => {
@@ -45,7 +45,7 @@ const LoginPage = () => {
     // check use loged in or not...
     if(localStorage.getItem("userData") != null) {
         setTimeout(() => {
-            navigate('/home');
+            navigate('/');
         }, 100);
     }
     return (

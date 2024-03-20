@@ -37,7 +37,7 @@ const OfferList = () => {
                                     <React.Fragment key={index}>
                                         <div className="item" style={{ minWidth: 300, marginLeft: '10px', marginRight: '10px' }}>
                                             <div className="media d-block mb-4 text-center ftco-media border-0">
-                                                <img src={"src/assets/images/Boxes/" + data.Bid.BImageURL} alt="Free Template by Free-Template.co" className="img-fluid" />
+                                                <img src={"src/assets/images/Boxes/" + data.Bid.BImageURL} alt="Free Template by Free-Template.co" style={{width: 350, height: 200}} className="img-fluid" />
                                                 <div className="media-body p-md-5 p-4">
                                                     <h5 className="text-primary"> {data.Off}% Off Right Now </h5>
                                                     <h5 className="mt-0 h4">{data.Bid.BName}</h5>
