@@ -48,7 +48,7 @@ const SignupPage = () => {
                 seterrorStatus(false)
                 localStorage.setItem("userData", JSON.stringify(response.data.userData))
                 setTimeout(() => {
-                    navigate('/home');
+                    navigate('/');
                 }, 500);
             })
             .catch((error) => {
@@ -61,7 +61,7 @@ const SignupPage = () => {
     useEffect( () => {
         if(localStorage.getItem("userData") != null) {
             setTimeout(() => {
-                navigate('/home');
+                navigate('/');
             }, 100);
         }
     }, [])

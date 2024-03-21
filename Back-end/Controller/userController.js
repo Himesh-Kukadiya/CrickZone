@@ -39,7 +39,8 @@ const signup = async (req, res) => {
             "City": user.UCity, 
             "Area": user.UArea, 
             "Mobile" : user.UMobile,
-            "Email": user.UEmail
+            "Email": user.UEmail,
+            "Image" : user.UImageURL
         } 
         res.status(200).json({ isSignedIn: true, message: 'User created successfully',  userData});
     } catch (error) {
@@ -69,9 +70,11 @@ const login = async(req, res) => {
             "City": user.UCity, 
             "Area": user.UArea, 
             "Mobile" : user.UMobile,
-            "Email": user.UEmail
+            "Email": user.UEmail,
+            "Image" : user.UImageURL
         } 
         res.status(200).json({ isLoggedIn: true, message: 'Login successful', userData});
+        
     } catch (error) {
         console.error(error);
         res.status(500).send({ message: 'Server error' });
