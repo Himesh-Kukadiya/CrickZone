@@ -12,10 +12,6 @@ const BookingDetails = () => {
     const [boxData, setBoxData] = useState({});
     const [totalAmount, setTotalAmount] = useState(0)
 
-    // useEffect(() => {
-    //     console.log(hourStatus)
-    // }, [hourStatus])
-    // get the box id from url
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const B_id = searchParams.get("bid")
@@ -35,12 +31,12 @@ const BookingDetails = () => {
     }
 
     function findColor(str, hourTrue) {
-        if(hourTrue) 
+        if (hourTrue)
             return "text_disabled"
-        else if (myBooking.includes(str))
+        else if(myBooking.includes(str)) 
             return "text_blue"
         else if (othersBooking.includes(str))
-            return "text-danger "
+            return "text-danger"
         else if (selectedTime.includes(str))
             return "text-success"
         else

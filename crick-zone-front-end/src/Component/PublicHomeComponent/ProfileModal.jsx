@@ -76,7 +76,7 @@ const ProfileModal = (props) => {
                                             nav('/login')
                                         }}>
                                             <i className="material-icons mt-2" style={{marginTop: 10}}>logout</i> 
-                                            <span className="text-dark mt-2 pl-2" style={{fontSize: 20}}> Logout</span></h6>
+                                            <span className="text-dark mt-2 pl-2" style={{fontSize: 17}}> Logout</span></h6>
                                     </div>
                                 </div>
                                 <div className="row mt-1">
@@ -87,7 +87,7 @@ const ProfileModal = (props) => {
                                             nav('/forgetPassword')
                                         }}>
                                             <i className="material-icons mt-2" style={{marginTop: 10}}>password</i> 
-                                            <span className="text-dark mt-2 pl-2" style={{fontSize: 20}}> Change Passwrod</span></h6>
+                                            <span className="text-dark mt-2 pl-2" style={{fontSize: 17}}> Change Passwrod</span></h6>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ const ProfileModal = (props) => {
 }
 
 ProfileModal.propTypes = {
-    userData: PropsType.object.isRequired,
+    userData: PropsType.object,
 }
 
 export default ProfileModal

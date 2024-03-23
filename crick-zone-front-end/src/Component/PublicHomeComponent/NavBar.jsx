@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import ProfileModal from './ProfileModal';
 const data = localStorage.getItem("userData")
 let userData;
+let isLoggedIn = false;
 if(data) {
-    userData = JSON.parse(data)
+    userData = JSON.parse(data);
+    isLoggedIn = true;
 }
 export const NavBar = () => {
     return (
@@ -20,19 +22,23 @@ export const NavBar = () => {
                     <div className="collapse navbar-collapse" id="ftco-nav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item active"><a href="#section-home" className="nav-link">Home</a></li>
-                            <li className="nav-item"><a href="#section-about" className="nav-link">About</a></li>
                             <li className="nav-item"><a href="#section-offer" className="nav-link">Offers</a></li>
-                            <li className="nav-item"><a href={userData == undefined ? "/login" : "#"} className="nav-link" ><button className='btn btn-danger' type="button" data-toggle="modal" data-target="#exampleModal"  style={{marginTop: -5}}>{userData == undefined ? "Login" : userData.Name}</button></a></li>
+                            <li className="nav-item"><a href="#section-menu" className="nav-link">Boxes</a></li>
+                            <li className="nav-item"><a href="#section-about" className="nav-link">About</a></li>
+                            <li className="nav-item"><a href="#section-contact" className="nav-link">Contact</a></li> 
+                            <li className="nav-item"><a href={userData == undefined ? "/login" : "#"} 
+                                className="nav-link" ><button className='btn btn-danger' type="button" 
+                                data-toggle="modal" data-target="#exampleModal"  style={{marginTop: -5, marginRight: -120}}>
+                                {userData == undefined ? "Login" : userData.Name}</button></a></li>
                             {/* <li className="nav-item"><a href="#section-menu" className="nav-link">Menu</a></li>
-                            <li className="nav-item"><a href="#section-news" className="nav-link">News</a></li>
-                            <li className="nav-item"><a href="#section-gallery" className="nav-link">Gallery</a></li>
-                            <li className="nav-item"><a href="#section-contact" className="nav-link">Contact</a></li>  */}
+                                <li className="nav-item"><a href="#section-news" className="nav-link">News</a></li>
+                            <li className="nav-item"><a href="#section-gallery" className="nav-link">Gallery</a></li>  */}
                         </ul>
                     </div>
                 </div>
             </nav>
-
-            <ProfileModal userData={userData} />
+            {isLoggedIn ? <ProfileModal userData={userData} /> : ""}
+            
         </>
     )
 }

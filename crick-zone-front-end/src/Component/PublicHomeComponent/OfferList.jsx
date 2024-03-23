@@ -18,7 +18,7 @@ const OfferList = () => {
     // fucntions
     return (
         <>
-            <section className="ftco-section bg-light" id="section-offer">
+            <section className="ftco-section bg-light" id="section-offer" style={{marginBottom: -200}}>
                 <div className="container" style={{marginTop: -50}}>
                     <div className="row">
                         <div className="col-md-12 text-center mb-5 ftco-animate">

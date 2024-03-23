@@ -3,7 +3,7 @@
 const AboutSection = () => {
     return (
         <>
-            <section className="ftco-section" id="section-about">
+            <section className="ftco-section" id="section-about" style={{marginBottom: -200}}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-5 ftco-animate mb-5">
@@ -16,7 +16,7 @@ const AboutSection = () => {
                         </div>
                         <div className="col-md-1"></div>
                         <div className="col-md-6 ftco-animate img" data-animate-effect="fadeInRight">
-                            <img src={"src/assets/images/login.jpg"}  alt="Free Template by Free-Template.co" />
+                            <img src={"src/assets/images/login.jpg"} style={{width: 523}} alt="Free Template by Free-Template.co" />
                         </div>
                     </div>
                 </div>

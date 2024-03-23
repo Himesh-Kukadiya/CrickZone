@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "mongoose": "^8.2.2",
-    "razorpay": "^2.9.2"
+    "razorpay": "^2.9.2",
+    "react-simple-image-slider": "^2.4.1",
+    "react-slick": "^0.30.2"
   }
 }
