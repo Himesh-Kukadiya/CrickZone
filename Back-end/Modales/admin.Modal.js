@@ -1,3 +1,4 @@
+const mongoose = require('mongoose')
 const adminModal = mongoose.model('Admins', {
     AName: String,
     AMobile: String,

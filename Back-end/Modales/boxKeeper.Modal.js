@@ -1,11 +1,8 @@
+const mongoose = require("mongoose")
 const boxkeeperModal = mongoose.model('BooxKeepers', {
     BKName: String,
     BKMobile: String,
-    BKEmail: {
-        type: String,
-        required: true,
-        unique: true 
-    },
+    BKEmail: String,
     BKPassword: String,
     BKImageURL: String
 }, 'BooxKeepers')
