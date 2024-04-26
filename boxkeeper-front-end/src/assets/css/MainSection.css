@@ -1,0 +1,143 @@
+/* ---------- MAIN ---------- */
+
+.main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    width: 100%;
+}
+
+.main-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-title>p {
+    font-size: 20px;
+}
+
+.main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.card:first-child {
+    border-left: 7px solid #246dec;
+}
+
+.card:nth-child(2) {
+    border-left: 7px solid #f5b74f;
+}
+
+.card:nth-child(3) {
+    border-left: 7px solid #367952;
+}
+
+.card:nth-child(4) {
+    border-left: 7px solid #cc3c43;
+}
+
+.card>span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-inner>p {
+    font-size: 18px;
+}
+
+.card-inner>span {
+    font-size: 35px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 0.9fr 0.9fr;
+    gap: 20px;
+}
+
+.charts-card {
+    background-color: #ffffff;
+    margin-bottom: 2px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; */
+}
+
+.chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.tbl {
+    overflow-y: auto;
+}
+
+.tbl table {
+    width: 100%;
+}
+
+.tbl thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1; 
+}
+
+.tbl th, .tbl td {
+    padding: 8px;
+}
+
+
+/* Applications */
+.application {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.application-type {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    justify-content: space-between;
+}
+
+.application-type:hover {
+    padding: 10px;
+    color:orange ;
+    border-bottom: 4px solid #f5b74f;
+    cursor: pointer;
+    transition: 0.5s;
+}

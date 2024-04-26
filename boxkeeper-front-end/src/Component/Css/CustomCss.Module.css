@@ -1,0 +1,56 @@
+.text_blue {
+    color: rgb(15, 15, 248);
+}
+
+.text_disabled {
+    color: rgb(155, 155, 159);
+}
+
+.button_primary {
+    background-color: #0b0bdded;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.error-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider-container {
+    max-width: 800px;
+    /* Adjust max-width as needed */
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        max-width: 600px;
+        /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .slider-container {
+        max-width: 400px;
+        /* Adjust for even smaller screens */
+    }
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.size-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Add more media queries as needed */
