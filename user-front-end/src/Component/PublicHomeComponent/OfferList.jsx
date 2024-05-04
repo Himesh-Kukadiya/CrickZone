@@ -42,7 +42,7 @@ const OfferList = () => {
                                                     <h5 className="text-primary"> {data.Off}% Off Right Now </h5>
                                                     <h5 className="mt-0 h4">{data.Bid.BName}</h5>
                                                     <p className="mb-4">{data.Bid.BDescription}</p>
-                                                    <p className="mb-0"><Link className="btn btn-primary btn-sm" to={"/booking?bid="+data.Bid._id}> Book Now! </Link></p>
+                                                    <p className="mb-0"><Link className="btn btn-primary btn-sm" to={"/boxDetails?bid="+data.Bid._id}> Book Now! </Link></p>
                                                 </div>
                                             </div>
                                         </div>

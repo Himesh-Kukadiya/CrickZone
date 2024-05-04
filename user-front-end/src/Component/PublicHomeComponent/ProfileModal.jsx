@@ -69,23 +69,23 @@ const ProfileModal = (props) => {
                                         <h6 className="text-dark text-dark mt-2">{props.userData.Area}</h6>
                                     </div>
                                 </div>
-                                <div className="row mt-3">
+                                <div className="row mt-3" style={{cursor: "pointer"}}>
                                     <div className="col-sm-2"></div>
                                     <div className="col-sm-7 ml-2 mr-4" style={{border: '2px solid black', borderRadius: 10}}>
                                         <h6 className="text-dark" onClick={()=> {
                                             localStorage.removeItem("userData");
                                             nav('/login')
                                         }}>
-                                            <i className="material-icons mt-2" style={{marginTop: 10}}>logout</i> 
+                                            <i className="material-icons mt-2" style={{marginTop: 10,}}>logout</i> 
                                             <span className="text-dark mt-2 pl-2" style={{fontSize: 17}}> Logout</span></h6>
                                     </div>
                                 </div>
-                                <div className="row mt-1">
+                                <div className="row mt-1" style={{cursor: "pointer"}}>
                                     <div className="col-sm-2"></div>
                                     <div className="col-sm-7 ml-2 mr-4" style={{border: '2px solid black', borderRadius: 10}}>
                                         <h6 className="text-dark" type="button" data-toggle="modal" data-target="#ChangePassword" data-dismiss="modal" aria-label="Close">
                                             <i className="material-icons mt-2" style={{marginTop: 10}}>password</i> 
-                                            <span className="text-dark mt-2 pl-2" style={{fontSize: 17}} > Change Passwrod</span></h6>
+                                            <span className="text-dark mt-2 pl-2" style={{fontSize: 17, cursor: "pointer"}} > Change Passwrod</span></h6>
                                             {/* ChangePassword */}
                                     </div>
                                 </div>

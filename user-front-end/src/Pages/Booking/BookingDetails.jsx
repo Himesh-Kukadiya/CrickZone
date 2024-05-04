@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import '/src/Css/CustomCss.Module.css'
-
 import axios from "axios";
 
 const BookingDetails = () => {
@@ -217,7 +216,10 @@ const BookingDetails = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-8"></div>
+                    <div className="col-md-6"></div>
+                    <div className="col-md-2">
+                        <input type="button" onClick={() => navigate('/')} className="btn button_primary" value={"Go To Home"} />
+                    </div>
                     <div className="col-md-4">
                         <input type="button" onClick={bookNowHandle} className="btn button_primary" value={"Book Now"} />
                     </div>

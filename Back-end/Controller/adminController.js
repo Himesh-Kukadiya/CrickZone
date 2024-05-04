@@ -23,7 +23,7 @@ const login = async(req, res) => {
     try {
         const adminData = await adminModal.findOne({ AEmail: email });
         if (!adminData) { // check boxkeeper or not...
-            return res.status(404).json({ isLoggedIn: false, message: 'BoxKeeper not found' });
+            return res.status(404).json({ isLoggedIn: false, message: 'Admin not found' });
         }
         if (password != adminData.APassword) { // check cradentioal
             return res.status(401).json({ isLoggedIn: false, message: 'Invalid credentials' });

@@ -20,6 +20,9 @@ const userController = require('../Controller/userController')
         router 
             .route('/sendOTP')
             .post(userController.sendOTP)
+        router 
+            .route('/changePassword')
+            .post(userController.changePassword)
         // hash password
         router
             .route('/hashconverter')
@@ -223,7 +226,8 @@ const upload2 = multer({ storage: storage2 });
 router.post('/adminProfileImageUpload', upload.single('image'), async (req, res) => {
     // Accessing the _id from the request body
     const _id = req.body.A_id;
-
+    console.log(req.body);
+    
     try {
         const updateAdmin = await adminModal.findByIdAndUpdate(_id, { AImageURL: req.file.filename }, { new: true })
         if(updateAdmin) {

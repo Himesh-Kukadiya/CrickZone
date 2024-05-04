@@ -109,13 +109,31 @@ const paymentVarification = async (req, res) => {
         .digest('hex');
 
     const isAuthentic = expectedSignature === razorpay_signature;
-    if (isAuthentic) {
+    if (isAuthentic) {        
         // Perform Cross Transaction 
         const newBooking = { U_id, B_id, BookDate, BBDate, BBTime, BBTotalAmount }
         const boxbooking = await boxBookingModal.create(newBooking);
 
         const newBookindDetails = await boxBookingModal.findOne(newBooking)
         const BB_id = newBookindDetails._id;
+
+        const userData = await userModal.findById({_id: U_id});
+        const box = await boxDetailse.findById(B_id).populate('BK_id');
+        const userController = require('../Controller/userController');
+        
+        {
+            // users
+            const sub = "CrickZone Box Bookings"
+            const msg = `Hello, ${userData.UName} you have booked ${box.BName} on ${BBDate}.your Booking Number is ${BB_id}.  box price is ${box.BPrice} and you pay total ${BBTotalAmount}. your booking hours is [${BBTime.toString()}]. address of this box is ${box.BAddress}.`;
+            userController.sendMail(sub, msg, userData.UEmail, "crickzone075@gmail.com");
+        }
+
+        {
+            // box Keepers
+            const sub = "CrickZone Box Booked"
+            const msg = `Hello, ${box.BK_id.BKName} you got booking from ${userData.UName} of your box ${box.BName} on ${BBDate}.Booking Number is ${BB_id}. box price is ${box.BPrice} and ${userData.UName} pay total ${BBTotalAmount}. booking hours is [${BBTime.toString()}].`;
+            userController.sendMail(sub, msg, "himeshkukadiya075@gmail.com", "crickzone075@gmail.com");
+        }
 
         const paymentDetails = { BB_id, razorpay_payment_id, razorpay_order_id, razorpay_signature }
         const newPayment = await paymentModal.create(paymentDetails);

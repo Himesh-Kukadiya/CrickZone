@@ -62,9 +62,11 @@ const getGalary = async(req, res) => {
     try {
         const {B_id} = req.body;
         const image = await Galary.findOne({B_id})
+        console.log(image)
         const imageUrl = image.Images.map((x)=> {
-            return {url : "/src/assets/images/galary/" + x}
+            return {url : x}
         })
+        console.log(imageUrl)
         res.status(200).json(imageUrl)
     }
     catch(err) {

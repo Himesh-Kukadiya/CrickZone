@@ -2,6 +2,7 @@ import LoginPageCss from '../Css/LoginPage.module.css'
 import { useState } from 'react'
 import axios from "axios";
 import { Link, useNavigate} from 'react-router-dom' 
+import ChangePasswordModal from '../Component/PublicHomeComponent/ChangePasswordModal';
 
 
 const LoginPage = () => {
@@ -49,42 +50,45 @@ const LoginPage = () => {
         }, 100);
     }
     return (
-        <div className={LoginPageCss.LoginBody}>
-            <main className='Login'>
-                <header>
-                    <h4>Login</h4>
-                </header>
-                <form onSubmit={loginRequest}>
-                    {/* Email */}
-                    <div className={LoginPageCss.form_wrapper}>
-                        <input className='input' id="input" name="email" type="text" onChange={handleInputs} required />
-                            <label htmlFor="input">Email Id</label>
-                            <i className="material-icons">email</i>
-                    </div>
-                    {/* Password */}
-                    <div className={LoginPageCss.form_wrapper}>
-                        <input className='input' id="password" name="password" type="password" onChange={handleInputs} required />
-                            <label htmlFor="password">Password</label>
-                            <i className="material-icons">lock</i>
-                    </div>
-                    {/* Error Message */}
-                    <div className={LoginPageCss.form_wrapper}>
-                        <label className={errorStatus ? LoginPageCss.errors : LoginPageCss.success}>{errors} </label>
-                    </div>
-                    <div className={LoginPageCss.remember_box}>
-                        <div className={LoginPageCss.remember}>
-                            <input type="checkbox" id="remember" />
-                                <span htmlFor="remember">Remember me</span>
+        <>
+            <div className={LoginPageCss.LoginBody}>
+                <main className='Login'>
+                    <header>
+                        <h4>Login</h4>
+                    </header>
+                    <form onSubmit={loginRequest}>
+                        {/* Email */}
+                        <div className={LoginPageCss.form_wrapper}>
+                            <input className='input' id="input" name="email" type="text" onChange={handleInputs} required />
+                                <label htmlFor="input">Email Id</label>
+                                <i className="material-icons">email</i>
                         </div>
-                        <a href="#">Forgot Password ?</a>
-                    </div>
-                    <button type='submit'>Login</button>
-                    <div className={LoginPageCss.new_account}>
-                        Don’t have account ? <Link to="/signup">Sign up</Link>
-                    </div>
-                </form>
-            </main>
-        </div>
+                        {/* Password */}
+                        <div className={LoginPageCss.form_wrapper}>
+                            <input className='input' id="password" name="password" type="password" onChange={handleInputs} required />
+                                <label htmlFor="password">Password</label>
+                                <i className="material-icons">lock</i>
+                        </div>
+                        {/* Error Message */}
+                        <div className={LoginPageCss.form_wrapper}>
+                            <label className={errorStatus ? LoginPageCss.errors : LoginPageCss.success}>{errors} </label>
+                        </div>
+                        <div className={LoginPageCss.remember_box}>
+                            <div className={LoginPageCss.remember}>
+                                <input type="checkbox" id="remember" />
+                                    <span htmlFor="remember">Remember me</span>
+                            </div>
+                            <a href="#" data-toggle="modal" data-target="#ChangePassword" data-dismiss="modal" aria-label="Close">Forgot Password ?</a>
+                        </div>
+                        <button type='submit'>Login</button>
+                        <div className={LoginPageCss.new_account}>
+                            Don’t have account ? <Link to="/signup">Sign up</Link>
+                        </div>
+                    </form>
+                </main>
+            </div>
+            <ChangePasswordModal />
+        </>
     )
 }
 

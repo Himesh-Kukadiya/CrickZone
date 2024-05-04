@@ -4,17 +4,16 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import '/src/Css/CustomCss.Module.css'
 import '/src/Css/CustomCss.Module.css'
-
+import axios from "axios";
 
 // import axios from "axios";
 import ImageSlider from "../Component/ImageSlider";
-import axios from "axios";
+
 const BoxDetails = () => {
     const nav = useNavigate();
     const location = useLocation();
     
     const [boxData, setBoxData] = useState({});
-    const [images, setImages] = useState()
     const [boxSize, setBoxSize] = useState({});
     const searchParams = new URLSearchParams(location.search);
     const B_id = searchParams.get("bid")
@@ -29,13 +28,7 @@ const BoxDetails = () => {
     }, [])
 
     useEffect(()=> {
-        async function getImages() {
-            const {data: imageUrl} = await axios.post("http://localhost:2020/getGalary", {B_id})
-            if(imageUrl) {
-                setImages(imageUrl)
-            }
-        }
-        getImages()
+        
     }, [])
     useEffect(()=> {
         const size = boxData.BSize;
@@ -57,7 +50,7 @@ const BoxDetails = () => {
                             </div>
                         </div>
                     </div>
-                    <ImageSlider images={images} />
+                    <ImageSlider B_id={B_id} />
                     <div className="col-md-12 text-center my-5 ">
                         <h4 className="ftco-sub-title text-dark">Explore Details of {boxData.BName}</h4>
                         <h2 className="display-4"> {boxData.BName} </h2>

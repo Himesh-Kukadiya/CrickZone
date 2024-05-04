@@ -21,7 +21,7 @@ const ProfileImageChangeModal = () => {
         const formData = new FormData();
         formData.append("image", image);
         formData.append("A_id", adminData._id); // Ensure adminData._id is not undefined
-    
+
         axios.post("http://localhost:2020/adminProfileImageUpload", formData)
             .then((response) => {
                 const ad = response.data.adminData
